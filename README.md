@@ -2,6 +2,10 @@
 
 Comprehensive MIME type mapping API. Includes all 600+ types and 800+ extensions defined by the Apache project, plus additional types submitted by the node.js community.
 
+## Fork
+
+This fork is customized to be packaged within one file to be included in node core.
+
 ## Install
 
 Install with [npm](http://github.com/isaacs/npm):
