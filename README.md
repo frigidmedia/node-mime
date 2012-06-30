@@ -37,31 +37,3 @@ Map mime-type to charset
     mime.charsets.lookup('text/plain');        // => 'UTF-8'
 
 (The logic for charset lookups is pretty rudimentary.  Feel free to suggest improvements.)
-
-## API - Defining Custom Types
-
-The following APIs allow you to add your own type mappings within your project.  If you feel a type should be included as part of node-mime, see [requesting new types](https://github.com/bentomas/node-mime/wiki/Requesting-New-Types).
-
-### mime.define()
-
-Add custom mime/extension mappings
-
-    mime.define({
-        'text/x-some-format': ['x-sf', 'x-sft', 'x-sfml'],
-        'application/x-my-type': ['x-mt', 'x-mtt'],
-        // etc ...
-    });
-
-    mime.lookup('x-sft');                 // => 'text/x-some-format'
-
-The first entry in the extensions array is returned by `mime.extension()`. E.g.
-
-    mime.extension('text/x-some-format'); // => 'x-sf'
-
-### mime.load(filepath)
-
-Load mappings from an Apache ".types" format file
-
-    mime.load('./my_project.types');
-
-The .types file format is simple -  See the `types` dir for examples.
